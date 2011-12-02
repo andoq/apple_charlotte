@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %meta{:charset => 'utf-8'}
+    %title Apple Charlotte Cooking
+    = javascript_include_tag "application"
+    = stylesheet_link_tag "application"
+  %body
+    .header
+      = link_to "Recipe Index", root_path
+    = yield
+
