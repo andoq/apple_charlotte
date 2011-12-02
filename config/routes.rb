@@ -1,7 +1,5 @@
 Apple::Application.routes.draw do
-  get "recipe/show"
-
-  get "recipe/index"
+  resources :recipes
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -52,7 +50,7 @@ Apple::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'recipe#index'
+  root :to => 'recipes#index'
 
   # See how all your routes lay out with "rake routes"
 
