@@ -14,6 +14,6 @@
 /log/*.log
 /tmp
 .idea
-/vendor
+/vendor/bundle
 /log
 .DS_store
