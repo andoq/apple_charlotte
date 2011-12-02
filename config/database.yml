@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: apple_production
+  database: apple_char_prod
   pool: 5
-  username: root
-  password:
+  username: apple_deploy
+  password: goodfood
   socket: /tmp/mysql.sock
