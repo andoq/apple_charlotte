@@ -1,0 +1,44 @@
+.header h1 {
+  background: image-url("apple_char_logo.png") no-repeat;
+  height: 100px;
+  width: 411px;
+  margin: auto;
+  text-indent: -1000px;
+}
+
+.navigation {
+
+  height: 30px;
+
+  .tabs {
+
+    height: 30px;
+
+    .tab {
+      float: left;
+      width: 100px;
+      height: 30px;
+      border-radius: 5px;
+      background-color: #990033;
+      border: black 1px solid;
+      border-left: none;
+      padding: 10px 0 0;
+      color: white;
+      text-align: center;
+
+      a {
+        color: white;
+        &:hover {
+          color: #F1896B;
+        }
+      }
+
+      &.disabled {
+        color: #eee;
+        opacity: .5;
+      }
+    }
+
+  }
+
+}

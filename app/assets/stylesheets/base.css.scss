@@ -1,0 +1,28 @@
+body {
+  background-color: #ccc;
+}
+
+.page {
+  width: 1000px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: #F1896B;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.content {
+  clear: both;
+  background-color: white;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+

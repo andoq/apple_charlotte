@@ -6,7 +6,17 @@
     = javascript_include_tag "application"
     = stylesheet_link_tag "application"
   %body
-    .header
-      = link_to "Recipe Index", root_path
-    = yield
+    .page
+      .header
+        %h1 Apple Charlotte Cooking
+        .navigation
+          .tabs
+            .tab
+              = link_to "Recipes", root_path
+            .tab.disabled
+              = "GuestBook"
+            .tab.disabled
+              = "Pictures"
+      .content
+        = yield
 
