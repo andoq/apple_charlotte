@@ -4,7 +4,7 @@ describe RecipesController do
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      get 'show', :id => 'BraisedThaiChickenLegsontheGrill'
       response.should be_success
     end
   end
