@@ -17,10 +17,10 @@ while (<>)
             print I "<li><a href=\"$filename\">$title</a></li>\n";
 
             print "$filename\n";
-            open F, ">$filename";
+            open F, ">recipes/$filename";
             print F "<h1>$title</h1>\n";
             print F "<h2>Ingredients</h2>\n";
-            print F "<ul>\n";
+            print F "<ul id='ingredients'>\n";
             foreach $ingredient (@ingredients)
             {
                 $ingredient = encode_entities($ingredient);
@@ -28,7 +28,7 @@ while (<>)
             }
             print F "</ul>\n";
             print F "<h2>Method</h2>";
-            print F "<ul>\n";
+            print F "<ul id='method'>\n";
             foreach $method (@method)
             {
                 $method = encode_entities($method);
@@ -36,11 +36,13 @@ while (<>)
             }
             print F "</ul>\n";
             print F "<h2>Notes</h2>";
+            print F "<div id='notes'>";
             foreach $note (@notes)
             {
                 $note = encode_entities($note);
                 print F "<p>\n$note</p>\n";
             }
+            print F "</div>";
             print F "</body>\n";
             close F;
         }
