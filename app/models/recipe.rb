@@ -14,6 +14,7 @@ class Recipe < ActiveRecord::Base
     ingredients = (doc/"#ingredients")
 
     (ingredients/"li").each do |li|
+      #TODO: extract ingredient amount from string
       ingredient = Ingredient.find_or_create_by_name(li.inner_html)
       recipe.ingredients << ingredient
     end
