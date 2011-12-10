@@ -1,2 +1,15 @@
 .recipe
-  = render :file => "recipes/recipes/#{params[:id]}.html"
+  %h1= @recipe.name
+  %h2 Ingredients
+  %ul#ingredients
+    - @recipe.ingredients.each do |ingredient|
+      %li.ingredient-name
+        = ingredient.name
+  %h2 Method
+  %ul#method
+    - @recipe.method.each do |step|
+      %li.step= step
+  %h2 Notes
+  %ul#notes
+    - @recipe.notes.each do |note|
+      %li.note= note

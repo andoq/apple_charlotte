@@ -1,12 +1,5 @@
 use HTML::Entities;
 
-open I, ">index.html";
-print I "<head>\n";
-print I "<title>Recipies</title>\n";
-print I "</head>\n";
-print I "<body>\n";
-print I "<ul>\n";
-
 while (<>) 
 {
     if ($_ =~ /^=+$/)
@@ -14,7 +7,6 @@ while (<>)
         if ($title ne "")
         {
             $title = encode_entities($title);
-            print I "<li><a href=\"$filename\">$title</a></li>\n";
 
             print "$filename\n";
             open F, ">recipes/$filename";
@@ -103,6 +95,3 @@ while (<>)
         push @notes, $_;
     }
 }
-
-print I "</ul>\n";
-close I;

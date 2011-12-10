@@ -3,6 +3,9 @@ class Recipe < ActiveRecord::Base
   has_many :ingredient_recipes
   has_many :ingredients, :through => :ingredient_recipes
 
+  serialize :method
+  serialize :notes
+
   def self.import_from_html(filename)
     p filename
     return unless File.file?(File.join(Rails.root, 'app', 'views', 'recipes', 'recipes', filename))
@@ -19,69 +22,50 @@ class Recipe < ActiveRecord::Base
       recipe.ingredients << ingredient
     end
 
-    #(doc/"h2").each do |h2|
-    #  case h2.inner_html
-    #    when 'Ingredients'
-    #      p "Ingredients: "
-    #      ul =  h2.next.next #an extra new line to get around
-    #      (h2.next.next/"li").each do |ingredient|
-    #        p ingredient.inner_html.gsub!("\n", '')
-    #      end
-    #    when 'Method'
-    #      p 'Methods: '
-    #      ul = h2.next
-    #      (h2.next/"li").each do |step|
-    #        p step.inner_html.gsub!("\n", '')
-    #      end
-    #    when 'Notes'
-    #      p 'Notes:'
-    #      p_tag = h2.next
-    #
-    #      while (p_tag)
-    #        if p_tag.name == "p"
-    #          p p_tag.inner_html.gsub!("\n", '')
-    #        end
-    #        p_tag = p_tag.next
-    #      end
-    #  end
-    #end
+    method = (doc/"#method")
+
+    methods = []
+
+    (method/"li").each do |li|
+      #TODO: put items into a strucutured DB object
+      methods << li.inner_html
+    end
+
+    recipe.method = methods
+
+    recipe.save!
+
+    notes = (doc/"#notes")
+
+    notes_array = []
+
+    (notes/"p").each do |p|
+      #TODO: put items into a strucutured DB object
+      notes_array << p.inner_html
+    end
+
+    recipe.notes = notes_array
+
+    recipe.save!
 
     true
   end
 
   def self.import_all
     ActiveRecord::Base.connection.execute('Truncate recipes')
-    Dir.foreach(File.join(Rails.root, 'app', 'views', 'recipes', 'recipes')) do |filename|
-      #p filename
+    ActiveRecord::Base.connection.execute('Truncate ingredients')
+    ActiveRecord::Base.connection.execute('Truncate ingredient_recipes')
+
+    to_html_location = File.join(Rails.root, 'data')
+    recipes_location = File.join(to_html_location, 'recipes')
+    Dir.foreach(recipes_location) do |filename|
+      File.delete(filename) if File.file?(filename)
+    end
+    system("cd #{to_html_location} && perl tohtml.pl < all.txt")
+
+    Dir.foreach(recipes_location) do |filename|
       import_from_html(filename)
     end
   end
-
-  def self.import_from_txt
-    ActiveRecord::Base.connection.execute('Truncate recipes')
-    counter = 0
-    io = File.new(File.join(Rails.root, 'data', 'all.txt'))
-    recipe = nil
-    while line
-      if (line.index('========='))
-        recipe.save! if recipe
-        recipe = Recipe.new()
-        counter = counter + 1
-        recipe.name = io.gets
-      end
-
-      if (line =~ /^INGREDIENTS:/)
-
-      end
-    end
-    recipe.save!
-    counter
-  end
-
-  def self.header_line?
-    return true if line =~ /^INGREDIENTS:|^METHOD:|^Description:|Servings:|Source:|Yield:|Notes:/
-  end
-
-
 
 end

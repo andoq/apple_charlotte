@@ -1,9 +1,10 @@
 class RecipesController < ApplicationController
   def show
-    #render :file => "recipes/recipes/#{params[:id]}.html"
+    @recipe = Recipe.find(params[:id])
   end
 
   def index
+    @recipes = Recipe.all
   end
 
 end
