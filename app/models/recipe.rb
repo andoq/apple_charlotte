@@ -61,6 +61,10 @@ class Recipe < ActiveRecord::Base
     Dir.foreach(recipes_location) do |filename|
       File.delete(filename) if File.file?(filename)
     end
+
+    #TODO: in the future, use ruby to read in the all.txt file.  But for now, the perl script is working great, and
+    #structures all the data nicely, so first run it through that, and the import from html.
+
     system("cd #{to_html_location} && perl tohtml.pl < all.txt")
 
     Dir.foreach(recipes_location) do |filename|
