@@ -37,6 +37,5 @@ gem 'jquery-rails'
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'hpricot' #html parsing for importing reciepes from generated HTML files
 end
 

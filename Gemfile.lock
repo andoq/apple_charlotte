@@ -44,7 +44,6 @@ GEM
       multi_json (~> 1.0)
     haml (3.1.4)
     hike (1.2.1)
-    hpricot (0.8.5)
     htmlentities (4.3.1)
     i18n (0.6.0)
     jquery-rails (1.0.19)
@@ -128,7 +127,6 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
   haml
-  hpricot
   htmlentities
   jquery-rails
   mysql2
