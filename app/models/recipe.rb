@@ -7,18 +7,18 @@ class Recipe < ActiveRecord::Base
   serialize :notes
 
   def self.import_from_html(filename)
+
     p filename
     return unless File.file?(File.join(Rails.root, 'app', 'views', 'recipes', 'recipes', filename))
     doc = open(File.join(Rails.root, 'app', 'views', 'recipes', 'recipes', filename)) { |f| Hpricot(f) }
     p "name: #{(doc/"h1").inner_html}"
 
-    recipe = Recipe.create!(:name => (doc/"h1").inner_html)
-
+    recipe = Recipe.create!(:name => get_text(doc/"h1"))
     ingredients = (doc/"#ingredients")
 
     (ingredients/"li").each do |li|
       #TODO: extract ingredient amount from string
-      ingredient = Ingredient.find_or_create_by_name(li.inner_html)
+      ingredient = Ingredient.find_or_create_by_name(get_text(li))
       recipe.ingredients << ingredient
     end
 
@@ -28,7 +28,7 @@ class Recipe < ActiveRecord::Base
 
     (method/"li").each do |li|
       #TODO: put items into a strucutured DB object
-      methods << li.inner_html
+      methods << get_text(li)
     end
 
     recipe.method = methods
@@ -41,7 +41,7 @@ class Recipe < ActiveRecord::Base
 
     (notes/"p").each do |p|
       #TODO: put items into a strucutured DB object
-      notes_array << p.inner_html
+      notes_array << get_text(p)
     end
 
     recipe.notes = notes_array
@@ -66,6 +66,15 @@ class Recipe < ActiveRecord::Base
     Dir.foreach(recipes_location) do |filename|
       import_from_html(filename)
     end
+  end
+
+  def self.html_coder
+    require 'htmlentities' unless defined? HTMLEntities
+    @@html_coder ||= HTMLEntities.new
+  end
+
+  def self.get_text(element)
+    html_coder.decode(element.inner_html.gsub('&Acirc;', ''))
   end
 
 end

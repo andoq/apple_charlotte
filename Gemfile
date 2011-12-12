@@ -10,6 +10,8 @@ gem 'mysql2'
 gem 'haml'
 gem 'therubyracer'
 
+gem 'htmlentities', :require => false #only needed for the import functionality
+
 
 # Gems used only for assets and not required
 # in production environments by default.
