@@ -1,12 +1,15 @@
 #recipe-search-form
-  = form_tag(recipes_path, :method => :get) do
+  %form{:action => recipe_search_path, :method => 'get', :class => 'search-form'}
     = label_tag(:recipe_name)
-    = text_field_tag(:recipe_name)
-    = submit_tag(:search)
-  = form_tag(recipes_path, :method => :get) do
+    = text_field_tag(:q, params[:q])
+    %span.search-button
+      Search
+
+  %form{:action => ingredient_search_path, :method => 'get', :class => 'search-form'}
     = label_tag(:ingredient_name)
-    = text_field_tag(:ingredient_name)
-    = submit_tag(:search)
+    = text_field_tag(:q, params[:q])
+    %span.search-button
+      Search
 
 
 .recipe-list

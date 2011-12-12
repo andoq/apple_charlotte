@@ -1,4 +1,8 @@
 Apple::Application.routes.draw do
+
+  match 'recipes/search/' => 'recipes#recipe_search', :as => :recipe_search
+  match 'ingredients/search/' => 'recipes#ingredient_search', :as => :ingredient_search
+
   resources :recipes
 
   # The priority is based upon order of creation:
