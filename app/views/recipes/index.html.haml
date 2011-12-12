@@ -1,18 +1,20 @@
 #recipe-search-form
   %form{:action => recipe_search_path, :method => 'get', :class => 'search-form'}
     = label_tag(:recipe_name)
-    = text_field_tag(:q, params[:q])
+    = text_field_tag(:q)
     %span.search-button
       Search
 
   %form{:action => ingredient_search_path, :method => 'get', :class => 'search-form'}
     = label_tag(:ingredient_name)
-    = text_field_tag(:q, params[:q])
+    = text_field_tag(:q)
     %span.search-button
       Search
 
-
 .recipe-list
+  .subheader
+    %h3
+      = @subheader
   - @recipes.each do |recipe|
     .recipe-name
       = link_to recipe.name, recipe_path(recipe)

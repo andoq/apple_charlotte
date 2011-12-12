@@ -7,6 +7,10 @@
 }
 
 .recipe-list {
+  width: 100%;
+  .subheader {
+    text-align: center;
+  }
   padding: 10px 5px 0px;
   clear: both;
 }
@@ -15,6 +19,7 @@
 
   float: left;
   margin: 0 10px 0 0;
+  height: 40px;
 
   .search-button {
     background-color: blue;
