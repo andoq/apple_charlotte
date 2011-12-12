@@ -9,6 +9,7 @@ gem 'mysql2'
 
 gem 'haml'
 gem 'therubyracer'
+gem 'hpricot'
 
 gem 'htmlentities', :require => false #only needed for the import functionality
 
