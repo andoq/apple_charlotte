@@ -1,11 +1,9 @@
-body {
-  background-color: #fff;
+body,html {
+  margin:0;
+  padding:0;
+  color:#000;
+  background:#E3E0D1;
   font-family: Verdana;
-}
-
-.page {
-  width: 1000px;
-  margin: auto;
 }
 
 a {
@@ -20,10 +18,19 @@ ul {
   list-style: none;
 }
 
-.content {
+
+#page {
+  width: 1000px;
+  margin: 0 auto;
+  background: #FFFFF0;
+}
+
+#content {
   clear: both;
-  background-color: white;
   padding: 5px 20px;
-  border: 1px solid gray;
+}
+
+#footer {
+  clear: both;
 }
 

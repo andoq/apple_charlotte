@@ -1,8 +1,15 @@
-.recipe-list
+#recipe-list
   .subheader
     %h3
       = @subheader
   - @recipes.each do |recipe|
     .recipe-name
       = link_to recipe.name, recipe_path(recipe)
-.comment-list
+#comment-list
+  .subheader
+    %h3
+      Comments
+  - Comment.limit(50).each do |comment|
+    .comment
+      .user-name= comment.user_name
+      .content= comment.content

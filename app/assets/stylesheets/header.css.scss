@@ -1,28 +1,35 @@
-.header h1 {
-  background: image-url("apple_char_logo.png") no-repeat;
-  height: 100px;
-  width: 411px;
-  margin: auto;
-  text-indent: -9999px;
+#header {
+  background:#fff;
+  h1 {
+    background: image-url("apple_char_logo.png") no-repeat;
+    height: 100px;
+    width: 411px;
+    margin: auto;
+    text-indent: -9999px;
+  }
 }
 
-.navigation {
-
-  height: 30px;
-  float: left;
+#navigation {
+  /*background:#c99;*/
+  height: 28px;
+  background: #fff;
+  border-bottom: 1px solid gray;
 
   .tabs {
+
+    float: left;
 
     .tab {
       float: left;
       width: 100px;
-      height: 24px;
+      height: 20px;
       background-color: #992233;
       border: black 1px solid;
       border-left: none;
       margin: 0 10px 0 0;
       color: white;
       text-align: center;
+      padding: 3px;
 
       a {
         color: white;
@@ -61,7 +68,7 @@
   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
   background: -o-linear-gradient(top, #3e779d, #65a9d7);
-  padding: 3px 12px;
+  padding: 2px 12px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;

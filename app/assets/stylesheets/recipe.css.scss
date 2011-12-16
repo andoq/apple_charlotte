@@ -6,11 +6,18 @@
   text-align: center;
 }
 
-.recipe-list {
-  width: 50%;
-  .subheader {
-    text-align: center;
-  }
+#recipe-list {
+  width: 470px;
+  float: left;
   padding: 10px 5px 0px;
-  clear: both;
+}
+
+#comment-list {
+  width: 470px;
+  float: right;
+  padding: 10px 5px 0px;
+}
+
+.subheader {
+  text-align: center;
 }
