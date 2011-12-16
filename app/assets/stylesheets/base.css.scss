@@ -3,7 +3,8 @@ body,html {
   padding:0;
   color:#000;
   background:#E3E0D1;
-  font-family: Verdana;
+  font-family: Verdana, sans-serif;;
+  font-size: 13px;
 }
 
 a {
@@ -16,6 +17,10 @@ a {
 
 ul {
   list-style: none;
+}
+
+.hidden-form {
+  display: none;
 }
 
 

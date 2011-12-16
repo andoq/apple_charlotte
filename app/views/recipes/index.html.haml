@@ -9,7 +9,19 @@
   .subheader
     %h3
       Comments
-  - Comment.limit(50).each do |comment|
-    .comment
-      .user-name= comment.user_name
-      .content= comment.content
+  .form-container
+    = link_to 'Add Comment', '#', :class => 'form-toggle-link'
+    = form_for Comment.new, :html => {:class => 'hidden-form comment-form'} do |f|
+      .label
+        Name
+      = f.text_field :user_name
+      .label
+        Comment
+      = f.text_area :content
+      = f.submit :class => 'submit button'
+      = f.submit 'Cancel', :class => 'cancel button'
+  .comments
+    - Comment.limit(50).each do |comment|
+      .comment
+        .user-name= "#{comment.user_name} said:"
+        .content= comment.content
