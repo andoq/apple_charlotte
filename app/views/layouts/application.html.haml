@@ -12,11 +12,17 @@
         .navigation
           .tabs
             .tab
-              = link_to "Recipes", root_path
-            .tab.disabled
-              = "GuestBook"
-            .tab.disabled
-              = "Pictures"
+              = link_to "Home", root_path
+        #recipe-search-form
+          %form{:action => recipe_search_path, :method => 'get', :class => 'search-form'}
+            = text_field_tag(:q)
+            %span.search-button
+              Search Recipes
+
+          %form{:action => ingredient_search_path, :method => 'get', :class => 'search-form'}
+            = text_field_tag(:q)
+            %span.search-button
+              Search Ingredients
       .content
         = yield
 

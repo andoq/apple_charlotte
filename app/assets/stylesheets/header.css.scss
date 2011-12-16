@@ -3,26 +3,24 @@
   height: 100px;
   width: 411px;
   margin: auto;
-  text-indent: -1000px;
+  text-indent: -9999px;
 }
 
 .navigation {
 
   height: 30px;
+  float: left;
 
   .tabs {
-
-    height: 30px;
 
     .tab {
       float: left;
       width: 100px;
-      height: 30px;
-      border-radius: 5px;
-      background-color: #990033;
+      height: 24px;
+      background-color: #992233;
       border: black 1px solid;
       border-left: none;
-      padding: 10px 0 0;
+      margin: 0 10px 0 0;
       color: white;
       text-align: center;
 
@@ -32,13 +30,57 @@
           color: #F1896B;
         }
       }
-
-      &.disabled {
-        color: #eee;
-        opacity: .5;
-      }
     }
 
   }
 
+}
+
+
+#recipe-search-form {
+  width: 600px;
+  float: right;
+}
+
+.search-form {
+  margin: 4px 10px 0 0;
+  height: 1px;
+  float: right;
+
+  .search-button {
+    background-color: blue;
+    color: white;
+  }
+}
+
+.search-button {
+  border-top: 1px solid #96d1f8;
+  background: #65a9d7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+  background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+  background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+  background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+  background: -o-linear-gradient(top, #3e779d, #65a9d7);
+  padding: 3px 12px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.search-button:hover {
+  border-top-color: #28597a;
+  background: #28597a;
+  color: #ccc;
+}
+.search-button:active {
+  border-top-color: #1b435e;
+  background: #1b435e;
 }
