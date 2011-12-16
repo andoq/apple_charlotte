@@ -23,6 +23,11 @@ ul {
   display: none;
 }
 
+.info {
+  font-size: .8em;
+  font-weight: normal;
+}
+
 
 #page {
   width: 1000px;
@@ -37,5 +42,7 @@ ul {
 
 #footer {
   clear: both;
+  padding: 10px;
+  text-align: center;
 }
 

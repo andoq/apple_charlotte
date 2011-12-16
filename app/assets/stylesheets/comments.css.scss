@@ -6,6 +6,7 @@
   border: 1px solid #ccc;
   padding: 5px;
   margin-top: 5px;
+  background: #fff;
   .user-name {
     font-size: 1.1em;
   }
@@ -19,6 +20,8 @@
   float: right;
   padding: 10px 5px 0px;
 
+  .form-toggle-link { float: right; }
+
   .label {
     font-weight: bold;
   }
@@ -29,7 +32,7 @@
 
   .comment-form {
     width: 400px;
-    height: 250px;
+    height: 290px;
     margin: auto;
     display: none;
     input {
