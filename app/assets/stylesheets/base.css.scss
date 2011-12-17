@@ -31,13 +31,15 @@ ul {
 
 #page {
   width: 1000px;
-  margin: 0 auto;
+  margin: 10px auto 25px auto;
   background: #FFFFF0;
+
 }
 
 #content {
   clear: both;
   padding: 5px 20px;
+  min-height: 500px;
 }
 
 #footer {

@@ -15,13 +15,18 @@ class RecipesController < ApplicationController
   def recipe_search
     @subheader = "'#{params[:q]}' Recipes"
     @recipes = Recipe.where("name like '%#{params[:q]}%'")
-    render :index
+    render :all_recipes
   end
 
   def ingredient_search
     @subheader = "'#{params[:q]}' ingredient Recipes"
     @recipes = Recipe.joins(:ingredients).select('distinct(recipes.id), recipes.*').where("ingredients.name like '%#{params[:q]}%'")
-    render :index
+    render :all_recipes
+  end
+
+  def random_recipes
+    @recipes = Recipe.order('rand()').limit(20)
+    render @recipes
   end
 
 end

@@ -4,6 +4,7 @@ Apple::Application.routes.draw do
   match 'ingredients/search/' => 'recipes#ingredient_search', :as => :ingredient_search
 
   match '/recipes/all' => 'recipes#all_recipes', :as => :all_recipes
+  match '/recipes/random' => 'recipes#random_recipes', :as => :random_recipes
 
   resources :recipes
   resources :comments

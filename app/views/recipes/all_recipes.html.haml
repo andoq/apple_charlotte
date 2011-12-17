@@ -2,6 +2,4 @@
   .subheader
     %h3
       = @subheader
-  - @recipes.each do |recipe|
-    .recipe-name
-      = link_to recipe.name, recipe_path(recipe)
+  = render @recipes

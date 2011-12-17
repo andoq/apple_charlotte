@@ -2,9 +2,9 @@
   .subheader
     %h3
       = @subheader
-  - @recipes.each do |recipe|
-    .recipe-name
-      = link_to recipe.name, recipe_path(recipe)
+    = link_to 'Another 20 Recipes', random_recipes_path(:format => :html), :remote => true, :id => 'more-recipes-link'
+  #random-recipe-list
+    = render @recipes
   .recipe-list-footer
     = link_to 'All Recipes', all_recipes_path, :id => 'all-recipe-link'
 #comment-list
