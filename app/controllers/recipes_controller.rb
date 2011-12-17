@@ -4,9 +4,12 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @subheader = "Recipes"
-    @recipes = Recipe.joins(:ingredients).select('distinct(recipes.id), recipes.*').where("ingredients.name like '%#{params[:ingredient_name]}%'")
-    #@recipes = Recipe.all
+    @subheader = "20 Random Recipes"
+    @recipes = Recipe.order('rand()').limit(20)
+  end
+
+  def all_recipes
+    @recipes = Recipe.order('name ASC')
   end
 
   def recipe_search

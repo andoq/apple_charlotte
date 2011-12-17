@@ -5,6 +5,8 @@
   - @recipes.each do |recipe|
     .recipe-name
       = link_to recipe.name, recipe_path(recipe)
+  .recipe-list-footer
+    = link_to 'All Recipes', all_recipes_path, :id => 'all-recipe-link'
 #comment-list
   .subheader
     %h3

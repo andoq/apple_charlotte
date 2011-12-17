@@ -10,8 +10,24 @@
   width: 470px;
   float: left;
   padding: 10px 5px 0px;
+  &.centered {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 .subheader {
   text-align: center;
+}
+
+.recipe-list-footer {
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+#all-recipe-link {
+  text-align: center;
+  color: #992233;
+  &:hover {
+    color: #F1896B;
+  }
 }
