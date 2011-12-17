@@ -45,7 +45,6 @@
 
 
 #recipe-search-form {
-  width: 600px;
   float: right;
 }
 
@@ -53,11 +52,6 @@
   margin: 4px 10px 0 0;
   height: 1px;
   float: right;
-
-  .search-button {
-    background-color: blue;
-    color: white;
-  }
 }
 
 .search-button {
@@ -80,7 +74,6 @@
   font-size: 14px;
   font-family: Georgia, serif;
   text-decoration: none;
-  vertical-align: middle;
 }
 .search-button:hover {
   border-top-color: #28597a;
