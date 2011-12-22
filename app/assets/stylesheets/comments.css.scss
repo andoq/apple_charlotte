@@ -28,6 +28,18 @@
 
   .comments {
     clear: both;
+
+    .user-name {
+      float: left;
+    }
+    .time {
+      float: right;
+      font-size: .8em;
+      color: #aaa;
+    }
+    .content {
+      clear: both;
+    }
   }
 
   .comment-form {

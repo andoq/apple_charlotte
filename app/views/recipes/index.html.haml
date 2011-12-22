@@ -28,7 +28,8 @@
       = f.submit :class => 'submit button'
       = f.submit 'Cancel', :class => 'cancel button'
   .comments
-    - Comment.limit(50).each do |comment|
+    - Comment.order('id DESC').limit(20).each do |comment|
       .comment
         .user-name= "#{comment.user_name} said:"
+        .time= "posted #{time_ago_in_words(comment.created_at)} ago"
         .content= comment.content
