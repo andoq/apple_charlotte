@@ -6,7 +6,7 @@ $(function(){
 });
 
 $(function(){
-  $('.subheader').on('ajax:success', function(xhr, data){
+  $('#more-recipes-link').on('ajax:success', function(xhr, data){
     $('#random-recipe-list').html(data)
   })
 })

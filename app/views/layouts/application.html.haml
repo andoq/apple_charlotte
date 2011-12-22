@@ -8,21 +8,15 @@
   %body
     #page
       #header
+        .char-left
+          = image_tag('/assets/char_head.png', :size => '110x110')
         %h1 Apple Charlotte Cooking
-      #navigation
-        .tabs
-          .tab
-            = link_to "Home", root_path
-        #recipe-search-form
-          %form{:action => recipe_search_path, :method => 'get', :class => 'search-form'}
-            = text_field_tag(:q)
-            %span.search-button
-              Search Recipes
-
-          %form{:action => ingredient_search_path, :method => 'get', :class => 'search-form'}
-            = text_field_tag(:q)
-            %span.search-button
-              Search Ingredients
+        .char-right
+          = image_tag('/assets/char_head_right_small.png', :size => '80x115')
+        #navigation
+          .tabs
+            .tab
+              = link_to "Home", root_path
       #content
         = yield
       #footer

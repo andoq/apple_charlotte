@@ -16,6 +16,10 @@
   }
 }
 
+.form-row {
+  height: 25px;
+}
+
 .subheader {
   text-align: center;
 }
@@ -30,4 +34,8 @@
   &:hover {
     color: #F1896B;
   }
+}
+
+#more-recipes-link {
+  margin: 4px 10px 0 0;
 }
