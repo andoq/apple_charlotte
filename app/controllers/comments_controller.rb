@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.limit(1000)
+    @comments = Comment.order('id DESC').limit(1000)
   end
 
 end
