@@ -1,6 +1,9 @@
 class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
+    if request.path != recipe_path(@recipe)
+      redirect_to recipe_path(@recipe), :status => :moved_permanently
+    end
   end
 
   def index

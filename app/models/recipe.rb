@@ -81,4 +81,8 @@ class Recipe < ActiveRecord::Base
     html_coder.decode(element.inner_html.gsub('&Acirc;', ''))
   end
 
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
 end
