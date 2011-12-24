@@ -1,7 +1,4 @@
 #recipe-list
-  .subheader
-    %h3
-      = @subheader
   #recipe-search-form
     .form-row
       %form{:action => recipe_search_path, :method => 'get', :class => 'search-form'}
@@ -13,12 +10,17 @@
         = text_field_tag(:q, nil, :class => 'search-input')
         %span.search-button
           Search Ingredients
+  .subheader
+    %h3
+      = @subheader
     .form-row
-      = link_to '20 Random', random_recipes_path(:format => :html), :remote => true, :id => 'more-recipes-link', :class => 'search-button'
-  #random-recipe-list
+      = link_to 'Try Again', random_recipes_path(:format => :html), :remote => true, :id => 'more-recipes-link', :class => 'search-button'
+  #random-recipe-list.centered
     = render @recipes
   .recipe-list-footer
     = link_to 'All Recipes', all_recipes_path, :id => 'all-recipe-link'
+  #char-picture
+    = image_tag '/assets/char_small.jpg', :size => "250x249"
 
 #comment-list
   .subheader
