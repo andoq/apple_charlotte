@@ -1,0 +1,4 @@
+.comment
+  .user-name= "#{comment.user_name} said:"
+  .time= "posted #{time_ago_in_words(comment.created_at)} ago"
+  .content= comment.content

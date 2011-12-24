@@ -43,8 +43,6 @@
       = f.submit :class => 'submit button'
       = f.submit 'Cancel', :class => 'cancel button'
   .comments
-    - Comment.order('id DESC').limit(200).each do |comment|
-      .comment
-        .user-name= "#{comment.user_name} said:"
-        .time= "posted #{time_ago_in_words(comment.created_at)} ago"
-        .content= comment.content
+    = render Comment.order('id DESC').limit(30)
+  .comments-footer
+    = link_to "All Comments", comments_path
