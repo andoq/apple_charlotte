@@ -1,4 +1,8 @@
 .comment
-  .user-name= "#{comment.user_name} said:"
-  .time= "posted #{time_ago_in_words(comment.created_at)} ago"
+  .user-name
+    = "#{comment.user_name.truncate(10)} posted"
+  .time
+    = "posted #{time_ago_in_words(comment.created_at)} ago"
+  .recipe-link
+    = comment.commentable.present? ? link_to(" from the #{comment.commentable.name.truncate(20)} recipe", comment.commentable, :title => "#{comment.commentable.name} Recipe") : ''
   .content= comment.content

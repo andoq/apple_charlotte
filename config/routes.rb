@@ -6,7 +6,9 @@ Apple::Application.routes.draw do
   match '/recipes/all' => 'recipes#all_recipes', :as => :all_recipes
   match '/recipes/random' => 'recipes#random_recipes', :as => :random_recipes
 
-  resources :recipes
+  resources :recipes do
+    resources :comments, :only => :create
+  end
   resources :comments
 
   # The priority is based upon order of creation:

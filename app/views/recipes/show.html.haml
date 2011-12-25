@@ -1,4 +1,4 @@
-.recipe
+.recipe.left-col
   %h1= @recipe.name
   %h2 Ingredients
   %ul#ingredients
@@ -13,3 +13,5 @@
   %ul#notes
     - @recipe.notes.each do |note|
       %li.note= note
+#comment-list.right-col
+  = render :partial => 'comments/comment_list', :locals => {:comments => @recipe.comments.limit(20), :new_comment => @recipe.comments.build}

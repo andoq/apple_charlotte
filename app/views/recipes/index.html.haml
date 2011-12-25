@@ -1,4 +1,4 @@
-#recipe-list
+#recipe-list.left-col
   #recipe-search-form
     .form-row
       %form{:action => recipe_search_path, :method => 'get', :class => 'search-form'}
@@ -22,27 +22,5 @@
   #char-picture
     = image_tag '/assets/char_small.jpg', :size => "250x249"
 
-#comment-list
-  .subheader
-    %h3
-      Messages
-  .form-container
-    = link_to 'Share Your Thoughts', '#', :class => 'form-toggle-link'
-    = form_for Comment.new, :html => {:class => 'hidden-form comment-form'} do |f|
-      .label
-        Name
-      = f.text_field :user_name
-      .label
-        Email
-        %span.info
-          (*won't be displayed, but put it in if you want us to get in touch)
-      = f.text_field :email
-      .label
-        Comment
-      = f.text_area :content
-      = f.submit :class => 'submit button'
-      = f.submit 'Cancel', :class => 'cancel button'
-  .comments
-    = render Comment.order('id DESC').limit(30)
-  .comments-footer
-    = link_to "All Comments", comments_path
+#comment-list.right-col
+  = render :partial => 'comments/comment_list', :locals => {:comments => Comment.order('id DESC').limit(30), :new_comment => Comment.new}

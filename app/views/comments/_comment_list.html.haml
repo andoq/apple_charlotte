@@ -1,0 +1,29 @@
+.subheader
+  %h3
+    Messages
+.form-container
+  = link_to 'Share Your Thoughts', '#', :class => 'form-toggle-link'
+  = form_for new_comment, :html => {:class => 'hidden-form comment-form'} do |f|
+    = f.hidden_field :commentable_id
+    = f.hidden_field :commentable_type
+    .label
+      Name
+    = f.text_field :user_name
+    .label
+      Email
+      %span.info
+        (*won't be displayed, but put it in if you want us to get in touch)
+    = f.text_field :email
+    .label
+      Comment
+    = f.text_area :content
+    = f.submit 'Add Message', :class => 'submit button'
+    = f.submit 'Cancel', :class => 'cancel button'
+.comments
+  - if comments.length == 0
+    .comment
+      = "no messages yet"
+  - else
+    = render comments
+.comments-footer
+  = link_to "All Messages", comments_path

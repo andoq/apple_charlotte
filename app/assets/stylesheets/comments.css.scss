@@ -8,30 +8,8 @@
   margin-top: 5px;
   background: #fff;
   .user-name {
-    font-size: 1.1em;
-  }
-  .content {
-    padding: 5px;
-  }
-}
-
-#comment-header {
-  text-align: center;
-}
-
-#comment-list {
-  width: 470px;
-  float: right;
-  padding: 10px 5px 0px;
-}
-
-.form-toggle-link { float: right; }
-
-.comments {
-  clear: both;
-
-  .user-name {
     float: left;
+    font-size: 1.1em;
   }
   .time {
     float: right;
@@ -40,7 +18,31 @@
   }
   .content {
     clear: both;
+    padding: 5px;
   }
+  .recipe-link {
+    float: right;
+    clear: both;
+    font-size: .8em;
+    color: #aaa;
+    a {
+      color: #992233;
+    }
+  }
+}
+
+#comment-header {
+  text-align: center;
+}
+
+#comment-list {
+  padding: 10px 5px 0px;
+}
+
+.form-toggle-link { float: right; }
+
+.comments {
+  clear: both;
 }
 
 .comments-footer {
