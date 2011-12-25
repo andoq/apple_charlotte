@@ -1,11 +1,20 @@
 $(function() {
   $('.form-toggle-link').on('click', function(e){
     e.preventDefault();
+    var link = $(this);
+    if($('#comment-form-div').html() === ""){
+      $.get(link.attr('href'), function(data) {
+        var commentForm = $('#comment-form-div');
+        $('#comment-form-div').html(data);
+      });
+    }else{
+      $('#comment-form-div').show();
+    }
     $(this).siblings('.hidden-form').first().toggle();
   });
 
-  $('.hidden-form .cancel').on('click', function(e){
+  $('#comment-list').on('click', '.comment-form .cancel',function(e){
     e.preventDefault();
-    $(this).parents('form').hide();
+    $('#comment-form-div').hide();
   });
 });

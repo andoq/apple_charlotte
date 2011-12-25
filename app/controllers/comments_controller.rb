@@ -13,4 +13,9 @@ class CommentsController < ApplicationController
     @comments = Comment.order('id DESC').limit(1000)
   end
 
+  def form
+    @new_comment = Comment.new(:commentable_type => params[:commentable_type], :commentable_id => params[:commentable_id])
+    render :layout => false
+  end
+
 end

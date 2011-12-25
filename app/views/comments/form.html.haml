@@ -1,0 +1,16 @@
+= form_for @new_comment, :html => {:class => 'comment-form'} do |f|
+  = f.hidden_field :commentable_id
+  = f.hidden_field :commentable_type
+  .label
+    Name
+  = f.text_field :user_name
+  .label
+    Email
+    %span.info
+      (*won't be displayed, but put it in if you want us to get in touch)
+  = f.text_field :email
+  .label
+    Comment
+  = f.text_area :content
+  = f.submit 'Add Message', :class => 'submit button'
+  = f.submit 'Cancel', :class => 'cancel button'

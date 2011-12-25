@@ -9,7 +9,9 @@ Apple::Application.routes.draw do
   resources :recipes do
     resources :comments, :only => :create
   end
-  resources :comments
+  resources :comments do
+    get 'form', :on => :collection
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
