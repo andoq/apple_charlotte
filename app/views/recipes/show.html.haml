@@ -14,4 +14,4 @@
     - @recipe.notes.each do |note|
       %li.note= note
 #comment-list.right-col
-  = render :partial => 'comments/comment_list', :locals => {:comments => @recipe.comments.limit(20), :new_comment => @recipe.comments.build}
+  = render :partial => 'comments/comment_list', :locals => {:comments => @recipe.comments.order('id DESC').limit(20), :new_comment => @recipe.comments.build}
