@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
+    @page_title = "#{@recipe.name} Recipe"
     if request.path != recipe_path(@recipe)
       redirect_to recipe_path(@recipe), :status => :moved_permanently
     end
