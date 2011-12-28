@@ -13,6 +13,8 @@ gem 'hpricot'
 
 gem 'htmlentities', :require => false #only needed for the import functionality
 
+gem 'newrelic_rpm'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
