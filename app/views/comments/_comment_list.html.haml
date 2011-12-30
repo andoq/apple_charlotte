@@ -2,7 +2,8 @@
   %h3
     Messages
 .form-container
-  = link_to 'Share Your Thoughts', form_comments_path(:commentable_type => new_comment.commentable_type, :commentable_id => new_comment.commentable_id), :class => 'form-toggle-link'
+  .post-message
+    = link_to 'Post a Message', form_comments_path(:commentable_type => new_comment.commentable_type, :commentable_id => new_comment.commentable_id), :class => 'search-button form-toggle-link'
   #comment-form-div
 .comments
   - if comments.length == 0

@@ -39,7 +39,13 @@
   padding: 10px 5px 0px;
 }
 
-.form-toggle-link { float: right; }
+.form-toggle-link {
+  float: right;
+  &.search-button {
+    width: 120px;
+    margin-bottom: 5px;
+  }
+}
 
 .comments {
   clear: both;

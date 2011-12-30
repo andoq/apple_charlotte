@@ -41,15 +41,21 @@
       float: left;
       width: 100px;
       height: 20px;
-      background-color: #992233;
-      border: black 1px solid;
-      border-left: none;
+      border: 1px solid grey;
+      border-bottom: 0px;
       margin: 0 10px 0 0;
       color: white;
       text-align: center;
-      padding: 3px;
-
+      padding: 6px 0 1px 0;
+      background: #992233;
+      background: -webkit-gradient(linear, left top, left bottom, from(#992233), to(#c46f7a));
+      background: -webkit-linear-gradient(top, #992233, #c46f7a);
+      background: -moz-linear-gradient(top, #992233, #c46f7a);
+      background: -ms-linear-gradient(top, #992233, #c46f7a);
+      background: -o-linear-gradient(top, #992233, #c46f7a);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#992233', endColorstr='#c46f7a');
       a {
+        font-weight: bold;
         color: white;
         &:hover {
           color: #F1896B;
@@ -74,15 +80,15 @@
 }
 
 .search-button {
-  border-top: 1px solid #96d1f8;
+  /*border-top: 1px solid #96d1f8;*/
   background: #65a9d7;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
-  background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-  background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-  background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-  background: -o-linear-gradient(top, #3e779d, #65a9d7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3e779d', endColorstr='#65a9d7');
-  padding: 2px 12px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#c46f7a), to(#992233));
+  background: -webkit-linear-gradient(top, #c46f7a, #992233);
+  background: -moz-linear-gradient(top, #c46f7a, #992233);
+  background: -ms-linear-gradient(top, #c46f7a, #992233);
+  background: -o-linear-gradient(top, #c46f7a, #992233);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c46f7a', endColorstr='#992233');
+  padding: 3px 12px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -91,20 +97,22 @@
   box-shadow: rgba(0,0,0,1) 0 1px 0;
   text-shadow: rgba(0,0,0,.4) 0 1px 0;
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   font-family: Georgia, serif;
   text-decoration: none;
   float: right;
   width: 140px;
   text-align: center;
   font-weight: bold;
+  cursor: pointer;
 }
 .search-button:hover {
-  border-top-color: #28597a;
-  background: #28597a;
-  color: #ccc;
+  /*border-top-color: #28597a;*/
+  /*background: #cf3e3e;*/
+  color: #F1896B;
 }
 .search-button:active {
-  border-top-color: #1b435e;
-  background: #1b435e;
+  /*border-top-color: #1b435e;*/
+  background: #cf3e3e;
+  color: #cccccc;
 }
