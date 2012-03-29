@@ -14,6 +14,7 @@ gem 'hpricot'
 gem 'htmlentities', :require => false #only needed for the import functionality
 
 gem 'newrelic_rpm'
+gem "recaptcha", :require => "recaptcha/rails"
 
 
 # Gems used only for assets and not required

@@ -12,5 +12,6 @@
   .label
     Comment
   = f.text_area :content
+  = recaptcha_tags :ajax => true
   = f.submit 'Add Message', :class => 'submit button'
   = f.submit 'Cancel', :class => 'cancel button'

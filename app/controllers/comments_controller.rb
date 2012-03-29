@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
 
   def create
+    unless verify_recaptcha
+      redirect_to :back, :notice => "Image validation was incorrect.  Please try again." and return
+    end
     @comment = Comment.new(params[:comment])
     if @comment.save
       redirect_to :back, :notice => "Thanks for adding a comment"

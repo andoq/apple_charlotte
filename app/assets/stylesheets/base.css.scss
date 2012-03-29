@@ -58,3 +58,12 @@ ul {
   float: right;
 }
 
+#flash {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  &.notice {
+    color: #992233;
+  }
+}
+
