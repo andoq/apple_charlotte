@@ -23,4 +23,4 @@
     = image_tag '/assets/char_small.jpg', :size => "250x249"
 
 #comment-list.right-col
-  = render :partial => 'comments/comment_list', :locals => {:comments => Comment.order('id DESC').limit(30), :new_comment => Comment.new}
+  .fb-activity{:href => request.url, "height" => 500, :width => 470, :header => false, :recommendations => false}

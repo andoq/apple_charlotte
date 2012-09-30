@@ -1,11 +1,10 @@
 .subheader
   %h3
-    Messages
-.form-container
-  .post-message
-    = link_to 'Post a Message', form_comments_path(:commentable_type => new_comment.commentable_type, :commentable_id => new_comment.commentable_id), :class => 'search-button form-toggle-link'
-  #comment-form-div
+    Comments
 .comments
+  .fb-comments{:href => request.url, "num-posts" => 5, :width => 470}
+  %h3
+    Old Comments
   - if comments.length == 0
     .comment
       = "no messages yet"
