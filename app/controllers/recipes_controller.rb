@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   def index
     limit = 10
     @subheader = "#{limit} Random Recipes"
-    @recipes = Recipe.order('rand()').limit(limit)
+    @recipes = Recipe.order('random()').limit(limit)
   end
 
   def all_recipes

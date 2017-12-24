@@ -1,11 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+ruby '2.4.2'
+
+gem 'rails', '5.1.4'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'pg'
 
 gem 'haml'
 gem 'therubyracer'
@@ -16,13 +18,14 @@ gem 'htmlentities', :require => false #only needed for the import functionality
 gem 'newrelic_rpm'
 gem "recaptcha", :require => "recaptcha/rails"
 
+gem 'puma'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.5'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'
