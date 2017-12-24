@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
 
   def recipe_search
     @subheader = "'#{params[:q]}' Recipes"
-    @recipes = Recipe.where("name like '%#{params[:q]}%'")
+    @recipes = Recipe.where("LOWER(name) like LOWER('%#{params[:q]}%')")
     render :all_recipes
   end
 
