@@ -2,7 +2,7 @@
   %h3
     Comments
 .comments
-  .fb-comments{:href => request.url, "num-posts" => 5, :width => 470}
+  .fb-comments{:href => request.url, "num-posts" => 5, :width => 470, "data-order-by" => "reverse_time"}
   %h3
     Old Comments
   - if comments.length == 0
