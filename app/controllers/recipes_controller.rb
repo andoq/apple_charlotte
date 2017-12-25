@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
   end
 
   def random_recipes
-    @recipes = Recipe.order('rand()').limit(10)
+    @recipes = Recipe.order('random()').limit(10)
     render @recipes
   end
 
