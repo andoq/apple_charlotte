@@ -20,8 +20,8 @@
   .recipe-list-footer
     = link_to 'All Recipes', all_recipes_path, :id => 'all-recipe-link'
   #char-picture
-    = image_tag '/assets/char_small.jpg', :size => "250x249"
+    = image_tag 'char_small.jpg', :size => "250x249"
 
 #comment-list.right-col
-  .fb-comments{:href => request.url, "num-posts" => 5, :width => 470}
+  .fb-comments{:href => request.url, "num-posts" => 5, :width => 470, "data-order-by" => "reverse_time"}
   .fb-activity{:href => request.url, "height" => 200, :width => 470, :header => false, :recommendations => false}
