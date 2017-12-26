@@ -8,6 +8,20 @@ class Recipe < ActiveRecord::Base
   serialize :method
   serialize :notes
 
+  def related
+    ingredient_ids = self.ingredient_ids
+
+    related_recipes = Recipe.select("recipes.*, count(ingredient_recipes.id)")
+                          .joins(:ingredient_recipes)
+                          .where("ingredient_recipes.ingredient_id in (?)", ingredient_ids)
+                          .where("recipes.id <> ?", self.id)
+                          .group("recipes.id")
+                          .order("count(ingredient_recipes.id) DESC")
+    # order by count(ir.id) DESC, ingredient_ids)
+
+    return related_recipes
+  end
+
   def self.import_from_html(filename)
 
     p filename

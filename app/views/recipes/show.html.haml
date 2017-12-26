@@ -13,5 +13,11 @@
   %ul#notes
     - @recipe.notes.each do |note|
       %li.note= note
-#comment-list.right-col
+.right-col
+  %h2 More Recipes to try
+  %ul.related
+    - @recipe.related.limit(5).each do |related_recipe|
+      %li.related-recipe
+        = link_to(related_recipe.name, related_recipe)
+  #comment-list
   = render :partial => 'comments/comment_list', :locals => {:comments => @recipe.comments.order('id DESC').limit(20), :new_comment => @recipe.comments.build}
