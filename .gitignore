@@ -15,6 +15,7 @@
 /tmp
 .idea
 /vendor/bundle
+/vendor/ruby
 /log
 .DS_store
 
