@@ -46,7 +46,3 @@ group :test, :development do
   gem 'rspec-rails'
 end
 
-group :development do
-  gem 'listen'
-end
-
