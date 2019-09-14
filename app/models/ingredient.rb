@@ -6,7 +6,7 @@ class Ingredient < ActiveRecord::Base
   def as_json
     return {
         id: self.id,
-        name: self.name,
+        name: self.name.to_json,
     }
   end
 

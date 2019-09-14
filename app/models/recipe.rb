@@ -27,9 +27,9 @@ class Recipe < ActiveRecord::Base
   def as_json
     return {
         id: self.id,
-        name: self.name,
-        method: self.method,
-        notes: self.notes,
+        name: self.name.to_json,
+        method: self.method.to_json,
+        notes: self.notes.to_json,
         ingredients: self.ingredients.as_json
     }
   end
