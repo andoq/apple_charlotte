@@ -34,6 +34,21 @@ class Recipe < ActiveRecord::Base
     }
   end
 
+  def self.export_to_csv(file_path = nil)
+    recipes = self.all
+    if file_path
+        File.open(file_path, "wb") do |f|
+          f.write(JSON.pretty_generate(recipes.as_json))
+        end
+    else
+      s3 = Aws::S3::Resource.new(region: 'us-west-2')
+      bucket = s3.bucket('apple-char-data')
+      bucket.object('andy.json').put({body: JSON.pretty_generate(recipes.as_json)})
+    end
+
+    return true
+  end
+
   def self.import_from_html(filename)
 
     p filename
