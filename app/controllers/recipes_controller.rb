@@ -34,4 +34,8 @@ class RecipesController < ApplicationController
     render @recipes
   end
 
+  def write_json
+    Recipe.export_to_csv()
+  end
+
 end

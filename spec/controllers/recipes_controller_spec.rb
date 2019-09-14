@@ -1,10 +1,11 @@
 require 'spec_helper'
 
-describe RecipesController do
+describe RecipesController, type: :controller do
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show', :id => 'BraisedThaiChickenLegsontheGrill'
+      recipe = Recipe.create!(name: "test")
+      get 'show', params: {id: "#{recipe.id}-test"}
       response.should be_success
     end
   end

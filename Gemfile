@@ -20,6 +20,8 @@ gem "recaptcha", :require => "recaptcha/rails"
 
 gem 'puma'
 
+gem 'aws-sdk-s3'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

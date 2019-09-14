@@ -40,5 +40,6 @@
             = flash[:notice]
         = yield
       #footer
-        written and updated by John Speare, Betsy Speare, Andy Camp, and Alex Wetmore, and Blake Hurst
+        written and updated by John Speare, Betsy Speare, Andy Camp, and Alex Wetmore, and Blake
+        = link_to '.', write_json_path, :id => 'all-recipe-link', method: :post
 

@@ -1,3 +1,5 @@
+require 'aws-sdk-s3'
+
 class Recipe < ActiveRecord::Base
 
   has_many :ingredient_recipes
@@ -20,6 +22,16 @@ class Recipe < ActiveRecord::Base
     # order by count(ir.id) DESC, ingredient_ids)
 
     return related_recipes
+  end
+
+  def as_json
+    return {
+        id: self.id,
+        name: self.name,
+        method: self.method,
+        notes: self.notes,
+        ingredients: self.ingredients.as_json
+    }
   end
 
   def self.import_from_html(filename)

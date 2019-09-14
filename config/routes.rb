@@ -6,6 +6,8 @@ Apple::Application.routes.draw do
   get '/recipes/all' => 'recipes#all_recipes', :as => :all_recipes
   get '/recipes/random' => 'recipes#random_recipes', :as => :random_recipes
 
+  post '/recipes/write_json' => 'recipes#write_json', as: :write_json
+
   resources :recipes do
     resources :comments, :only => :create
   end
